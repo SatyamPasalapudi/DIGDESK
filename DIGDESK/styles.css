@@ -1,0 +1,517 @@
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #555;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 0;
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#feedback-result {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.assessment-types {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.assessment-type-btn {
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    font-weight: bold;
+}
+
+.assessment-type-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.assessment-type-btn[data-type="quiz"] {
+    background-color: #3498db; /* Blue */
+}
+
+.assessment-type-btn[data-type="mcq"] {
+    background-color: #e74c3c; /* Red */
+}
+
+.assessment-type-btn[data-type="short-answer"] {
+    background-color: #2ecc71; /* Green */
+}
+
+.assessment-type-btn[data-type="logical"] {
+    background-color: #f39c12; /* Orange */
+}
+
+.assessment-type-btn.active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.assessment-type-form {
+    display: none;
+}
+
+.assessment-type-form.active {
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    resize: vertical;
+}
+
+/* Home page styles */
+#home {
+    text-align: center;
+}
+
+.login-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.login-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.login-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Login card colors */
+.login-card.teacher {
+    border-top: 5px solid #3498db;
+}
+
+.login-card.student {
+    border-top: 5px solid #e74c3c;
+}
+
+.login-card.parent {
+    border-top: 5px solid #2ecc71;
+}
+
+.login-card.teacher button {
+    background-color: #3498db;
+}
+
+.login-card.student button {
+    background-color: #e74c3c;
+}
+
+.login-card.parent button {
+    background-color: #2ecc71;
+}
+
+.login-card button:hover {
+    opacity: 0.9;
+}
+
+/* User pages */
+.user-page {
+    display: none;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-page.active {
+    display: block;
+}
+
+/* Logout button */
+.logout-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/* Teacher Dashboard Styles */
+.dashboard-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.dashboard-nav ul li {
+    flex-grow: 1;
+}
+
+.dashboard-nav ul li a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-nav ul li a:hover,
+.dashboard-nav ul li a.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.dashboard-content {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-section {
+    display: none;
+}
+
+.dashboard-section.active {
+    display: block;
+}
+
+.login-info {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Add these styles to your existing CSS file */
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-tab.active {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Add these styles to your existing CSS file */
+
+#teacher-navigation {
+    text-align: center;
+}
+
+.navigation-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.navigation-options button,
+.subject-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1em;
+    min-width: 200px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navigation-options button:hover,
+.subject-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.subject-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.subject-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1em;
+    width: 200px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subject-btn:hover {
+    background-color: #2980b9;
+}
+
+#subject-dashboard {
+    margin-top: 2rem;
+}
+
+/* Add these styles to your existing CSS file */
+
+.user-page {
+    display: none;
+}
+
+.user-page.active {
+    display: block;
+}
+
+.dashboard-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-content h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.dashboard-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.dashboard-content ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.dashboard-content ul li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+.dashboard-content h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dashboard-content button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-content button:hover {
+    background-color: #2980b9;
+}
+
+.logout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .navigation-options button,
+    .subject-btn {
+        width: 100%;
+    }
+}

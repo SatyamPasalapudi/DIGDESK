@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Assessment Tool - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Automatic Assessment Tool</h1>
+    </header>
+    <main>
+        <section id="home" class="active">
+            <h2>Welcome to the Automatic Assessment Tool</h2>
+            <div class="login-options">
+                <div class="login-card teacher">
+                    <h3>Teacher Access</h3>
+                    <form class="auth-form active" id="teacher-login">
+                        <input type="text" placeholder="Email" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p class="forgot-password"><a href="#" data-user-type="teacher">Forgot Password?</a></p>
+                </div>
+                <div class="login-card student">
+                    <h3>Student Login</h3>
+                    <form class="login-form" id="student-login">
+                        <input type="text" id="student-username" placeholder="Username" required>
+                        <input type="password" id="student-password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p class="forgot-password"><a href="#" data-user-type="student">Forgot Login Info?</a></p>
+                </div>
+                <div class="login-card parent">
+                    <h3>Parent Login</h3>
+                    <form class="login-form" id="parent-login">
+                        <input type="text" placeholder="Username" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p class="forgot-password"><a href="#" data-user-type="parent">Forgot Password?</a></p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="teacher-page" class="user-page">
+            <h2>Teacher Dashboard</h2>
+            <div class="dashboard-content">
+                <h3>Welcome, Teacher!</h3>
+                <p>Here's a summary of your recent activities:</p>
+                <ul>
+                    <li>You have 3 pending assignments to grade</li>
+                    <li>2 new messages from students</li>
+                    <li>Upcoming parent-teacher conference on Friday</li>
+                </ul>
+                <h4>Quick Actions:</h4>
+                <button>Create New Assessment</button>
+                <button>View Class Performance</button>
+                <button>Manage Student Profiles</button>
+            </div>
+        </section>
+        
+        <section id="teacher-navigation" class="user-page">
+            <h2>Welcome, Teacher!</h2>
+            <p>Please select a subject to proceed:</p>
+            <div class="subject-options">
+                <button class="subject-btn" data-subject="math">Mathematics</button>
+                <button class="subject-btn" data-subject="science">Science</button>
+                <button class="subject-btn" data-subject="english">English</button>
+                <button class="subject-btn" data-subject="history">History</button>
+            </div>
+            <div id="subject-dashboard" style="display: none;">
+                <h3 id="selected-subject"></h3>
+                <div class="navigation-options">
+                    <button id="go-to-dashboard">Go to Dashboard</button>
+                    <button id="create-assessment">Create New Assessment</button>
+                    <button id="view-reports">View Reports</button>
+                    <button id="manage-students">Manage Students</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="student-page" class="user-page">
+            <h2>Student Dashboard</h2>
+            <div class="dashboard-content">
+                <h3>Welcome, Student!</h3>
+                <p>Here's your current academic status:</p>
+                <ul>
+                    <li>You have 2 assignments due this week</li>
+                    <li>Your overall grade average is B+</li>
+                    <li>Next test: Math on Tuesday</li>
+                </ul>
+                <h4>Quick Actions:</h4>
+                <button>View Assignments</button>
+                <button>Take Practice Quiz</button>
+                <button>Check Grades</button>
+            </div>
+        </section>
+        
+        <section id="parent-page" class="user-page">
+            <h2>Parent Dashboard</h2>
+            <div class="dashboard-content">
+                <h3>Welcome, Parent!</h3>
+                <p>Here's an overview of your child's progress:</p>
+                <ul>
+                    <li>Your child has completed 85% of assigned work</li>
+                    <li>Overall grade average: A-</li>
+                    <li>Attendance rate: 98%</li>
+                </ul>
+                <h4>Quick Actions:</h4>
+                <button>View Detailed Progress Report</button>
+                <button>Schedule Parent-Teacher Meeting</button>
+                <button>Update Contact Information</button>
+            </div>
+        </section>
+        
+        <section id="forgot-password" class="user-page">
+            <h2>Forgot Password</h2>
+            <form id="forgot-password-form">
+                <input type="text" id="forgot-password-username" placeholder="Username" required>
+                <input type="email" id="forgot-password-email" placeholder="Email" required>
+                <button type="submit">Reset Password</button>
+            </form>
+        </section>
+        
+        <section id="create-new-password" class="user-page">
+            <h2>Create New Password</h2>
+            <form id="create-new-password-form">
+                <input type="password" id="new-password" placeholder="New Password" required>
+                <input type="password" id="confirm-new-password" placeholder="Confirm New Password" required>
+                <button type="submit">Set New Password</button>
+            </form>
+        </section>
+        
+        <section id="teacher-design-thinking" class="user-page">
+            <h2>Design Thinking Assessment</h2>
+            <nav class="dashboard-nav">
+                <ul>
+                    <li><a href="#" data-section="create-assessment" class="active">Create Assessment</a></li>
+                    <li><a href="#" data-section="manage-assessments">Manage Assessments</a></li>
+                    <li><a href="#" data-section="view-feedback">View Feedback</a></li>
+                    <li><a href="#" data-section="analytics">Analytics</a></li>
+                </ul>
+            </nav>
+            <div class="dashboard-content">
+                <div id="create-assessment" class="dashboard-section active">
+                    <h3>Create New Assessment</h3>
+                    <form id="design-thinking-assessment-form">
+                        <label for="assessment-title">Assessment Title:</label>
+                        <input type="text" id="assessment-title" required>
+                        <label for="assessment-description">Description:</label>
+                        <textarea id="assessment-description" required></textarea>
+                        <label for="question-type">Question Type:</label>
+                        <select id="question-type">
+                            <option value="multiple-choice">Multiple Choice</option>
+                            <option value="short-answer">Short Answer</option>
+                            <option value="long-answer">Long Answer</option>
+                        </select>
+                        <label for="question-text">Question:</label>
+                        <textarea id="question-text" required></textarea>
+                        <button type="submit">Create Assessment</button>
+                    </form>
+                </div>
+                <div id="manage-assessments" class="dashboard-section">
+                    <h3>Manage Assessments</h3>
+                    <p>Here you can view and edit existing assessments.</p>
+                    <!-- Add a list or table of existing assessments -->
+                </div>
+                <div id="view-feedback" class="dashboard-section">
+                    <h3>View Feedback</h3>
+                    <p>Review feedback and results from completed assessments.</p>
+                    <!-- Add a list or table of assessment feedback -->
+                </div>
+                <div id="analytics" class="dashboard-section">
+                    <h3>Analytics</h3>
+                    <p>Analyze performance and trends in design thinking assessments.</p>
+                    <!-- Add charts or graphs for assessment analytics -->
+                </div>
+                <div id="mcq-quiz" class="dashboard-section">
+                    <h3>Design Thinking MCQ Quiz</h3>
+                    <div id="quiz-container">
+                        <!-- Questions will be dynamically inserted here -->
+                    </div>
+                    <button id="submit-quiz" style="display: none;">Submit Quiz</button>
+                    <div id="quiz-results" style="display: none;">
+                        <h4>Quiz Results</h4>
+                        <p id="score-display"></p>
+                        <div id="question-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
